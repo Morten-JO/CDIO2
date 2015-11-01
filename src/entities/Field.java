@@ -22,10 +22,10 @@ public class Field {
 	
 	public String toString(){
 		if(points > 0){
-			return "You landed on "+name+" and gain "+points;
+			return "You landed on "+name+" and gain "+points+" points";
 		}
 		else if(points < 0){
-			return "You landed on "+name+" and lose "+(-points);
+			return "You landed on "+name+" and lose "+(-points)+" points";
 		}
 		else{
 			return "You landed on "+name+" and nothing happens";
