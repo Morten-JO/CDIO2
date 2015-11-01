@@ -33,7 +33,7 @@ public class Game {
 	
 	private void initializeArray(){
 		fields[0] = new Field("Tower", 250);
-		fields[1] = new Field("Creater", -100);
+		fields[1] = new Field("Crater", -100);
 		fields[2] = new Field("Palace gates", 100);
 		fields[3] = new Field("Cold Desert", -20);
 		fields[4] = new Field("Walled city", 180);
