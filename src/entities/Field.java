@@ -21,6 +21,9 @@ public class Field {
 	}
 	
 	public String toString(){
+		if(name.contains("The Werewall")){
+			return "You landed on "+this.getName()+" and lost "+(-this.getPoints())+" points, but gained an extra turn!";
+		}
 		if(points > 0){
 			return "You landed on "+name+" and gain "+points+" points";
 		}

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Cup {
 
-	private ArrayList<Dice> diceArray = new ArrayList<Dice>();;
+	private ArrayList<Dice> diceArray = new ArrayList<Dice>();
 	
 	
 	public Cup(int dices, int diceSides){

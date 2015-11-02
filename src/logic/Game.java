@@ -2,10 +2,7 @@ package logic;
 
 import java.util.ArrayList;
 
-import entities.Cup;
-import entities.Field;
-import entities.Player;
-import entities.Werewall;
+import entities.*;
 
 public class Game {
 
@@ -40,7 +37,7 @@ public class Game {
 		fields[5] = new Field("Monastery", 0);
 		fields[6] = new Field("Black cave", -70);
 		fields[7] = new Field("Huts in the mountain", 60);
-		fields[8] = new Werewall();
+		fields[8] = new Field("The Werewall (werewolf-wall)", -80);
 		fields[9] = new Field("The pit", -50);
 		fields[10] = new Field("Goldmine", 650);
 	}
