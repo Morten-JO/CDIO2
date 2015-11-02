@@ -20,6 +20,7 @@ public class Field {
 		return name;
 	}
 	
+	//Returns string based on field
 	public String toString(){
 		if(name.contains("The Werewall")){
 			return "You landed on "+this.getName()+" and lost "+(-this.getPoints())+" points, but gained an extra turn!";

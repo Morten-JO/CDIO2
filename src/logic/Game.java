@@ -12,6 +12,7 @@ public class Game {
 	private boolean won;
 	private int turn = 1;
 	
+	//Adds players without names
 	public Game(int dices, int diceSides){
 		cup = new Cup(dices, diceSides);
 		players.add(new Player());
@@ -19,6 +20,7 @@ public class Game {
 		initializeArray();
 	}
 	
+	//Adds players with names
 	public Game(int dices, int diceSides, String playerOne, String playerTwo){
 		cup = new Cup(dices, diceSides);
 		players.add(new Player());
@@ -28,6 +30,7 @@ public class Game {
 		initializeArray();
 	}
 	
+	//Inserts the fields into the array
 	private void initializeArray(){
 		fields[0] = new Field("Tower", 250);
 		fields[1] = new Field("Crater", -100);
@@ -42,6 +45,7 @@ public class Game {
 		fields[10] = new Field("Goldmine", 650);
 	}
 	
+	//rolls dices for player, and changes turn if not rolled "Werewall"
 	public String rollPlayer(Player player){
 		cup.rollDices();
 		if(cup.getDiceSum() != 10){
@@ -56,6 +60,7 @@ public class Game {
 		return fields[cup.getDiceSum()-2].toString();
 	}
 	
+	//Checks win conditions and returns String based on result(won is set true if game is won)
 	public String checkWinningConditions(){
 		if(players.get(0).getBalance() >= 3000 || players.get(1).getBalance() >= 3000){
 			if(players.get(0).getBalance() > players.get(1).getBalance()){

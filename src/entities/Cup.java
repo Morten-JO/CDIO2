@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 public class Cup {
 
+	//Array of dices
 	private ArrayList<Dice> diceArray = new ArrayList<Dice>();
 	
-	
+	//Adds amount of dices with specific side amount.
 	public Cup(int dices, int diceSides){
 		addDices(dices, diceSides);
 	}

@@ -11,9 +11,13 @@ public class GUIMain {
 		initializeGUI();
 		String playerOneName = GUI.getUserString("Write Player One Name");
 		String playerTwoName = GUI.getUserString("Write Player Two Name");
+		
 		Game game = new Game(2, 6, playerOneName, playerTwoName);
+		
 		GUI.addPlayer(game.getPlayer(0).getName(), game.getPlayer(0).getBalance());
 		GUI.addPlayer(game.getPlayer(1).getName(), game.getPlayer(1).getBalance());
+		
+		//Main loop, runs untill win conditions are true.
 		while(true){
 			while(game.getTurn() == 1){
 				rollPlayer(1, game);
@@ -27,10 +31,14 @@ public class GUIMain {
 				break;
 			}
 		}
+		
 		GUI.getUserButtonPressed("", "Exit");
 		GUI.close();
 	}
 	
+	/*
+	 * Tells user to roll dices by pressing button, and sets the approriate things after rolling the dices
+	 */
 	public static void rollPlayer(int player, Game game){
 		GUI.getUserButtonPressed(game.getPlayer(player-1).getName()+"s turn to roll!", "Roll");
 		String desc = game.rollPlayer(game.getPlayer(player-1));
