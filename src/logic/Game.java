@@ -57,7 +57,7 @@ public class Game {
 			}
 		}
 		fields[cup.getDiceSum()-2].landOn(player, this);
-		return fields[cup.getDiceSum()-2].toString();
+		return getOutputString(cup.getDiceSum());
 	}
 	
 	//Checks win conditions and returns String based on result(won is set true if game is won)
@@ -95,6 +95,23 @@ public class Game {
 	
 	public int getTurn(){
 		return turn;
+	}
+	
+	public String getOutputString(int index){
+		String name = fields[index-2].getName();
+		int points = fields[index-2].getPoints();
+		if(index == 10){
+			return "You landed on "+name+" and lost "+(-points)+" points, but gained an extra turn!";
+		}
+		if(points > 0){
+			return "You landed on "+name+" and gain "+points+" points";
+		}
+		else if(points < 0){
+			return "You landed on "+name+" and lose "+(-points)+" points";
+		}
+		else{
+			return "You landed on "+name+" and nothing happens";
+		}
 	}
 	
 }
