@@ -20,7 +20,7 @@ public class Field {
 		return name;
 	}
 	
-	public void landOn(Player player, Game game){
+	public void landOn(Player player){
 		player.adjustPoints(points);
 	}
 

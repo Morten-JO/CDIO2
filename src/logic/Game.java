@@ -56,7 +56,7 @@ public class Game {
 				turn = 1;
 			}
 		}
-		fields[cup.getDiceSum()-2].landOn(player, this);
+		fields[cup.getDiceSum()-2].landOn(player);
 		return getOutputString(cup.getDiceSum());
 	}
 	

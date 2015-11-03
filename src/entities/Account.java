@@ -10,10 +10,11 @@ public class Account {
 	
 	public void setBalance(int balance){
 		if(balance < 0){
-			balance = 0;
-			return;
+			this.balance = 0;
 		}
-		this.balance = balance;
+		else{
+			this.balance = balance;
+		}
 	}
 	
 	public void adjustBalance(int dif){
