@@ -103,9 +103,6 @@ public class Game {
 		if(index == 10){
 			return "You landed on "+name+" and lost "+(-points)+" points, but gained an extra turn!";
 		}
-		if(index == 12){
-			return "You landed on "+name+". You are RICH!";
-		}
 		if(points > 0){
 			return "You landed on "+name+" and gain "+points+" points";
 		}
