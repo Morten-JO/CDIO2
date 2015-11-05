@@ -40,7 +40,7 @@ public class GUIMain {
 	 * Tells user to roll dices by pressing button, and sets the approriate things after rolling the dices
 	 */
 	public static void rollPlayer(int player, Game game){
-		GUI.getUserButtonPressed(game.getPlayer(player-1).getName()+"s turn to roll!", "Roll");
+		GUI.getUserButtonPressed(game.getPlayer(player-1).getName()+"'s turn to roll!", "Roll");
 		String desc = game.rollPlayer(game.getPlayer(player-1));
 		GUI.setDice(game.getCup().getSumOfDice(0), game.getCup().getSumOfDice(1));
 		GUI.removeAllCars(game.getPlayer(player-1).getName());
@@ -62,7 +62,7 @@ public class GUIMain {
 		list[9].setDescription("The pit");
 		list[8] = new Street.Builder().build();
 		list[8].setTitle("The Werewall");
-		list[8].setSubText("-80 +1");
+		list[8].setSubText("-80 + extra turn");
 		list[8].setDescription("The Werewall (extra turn)");
 		list[7] = new Street.Builder().build();
 		list[7].setTitle("Huts in the mountain");
