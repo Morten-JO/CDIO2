@@ -5,7 +5,7 @@ import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 
-public class GUIMain {
+public class Main {
 
 	public static void main(String[] args) {
 		initializeGUI();
