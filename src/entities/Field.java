@@ -20,8 +20,8 @@ public class Field {
 		return name;
 	}
 	
-	public void landOn(Player player){
-		player.adjustPoints(points);
+	public boolean landOn(Player player){
+		return player.adjustPoints(points);
 	}
 
 	@Override

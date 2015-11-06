@@ -56,12 +56,25 @@ public class Game {
 				turn = 1;
 			}
 		}
-		fields[cup.getDiceSum()-2].landOn(player);
+		//apply points and check if it was possible
+		if(!fields[cup.getDiceSum()-2].landOn(player)){
+			won = true;
+		}
 		return getOutputString(cup.getDiceSum());
 	}
 	
 	//Checks win conditions and returns String based on result(won is set true if game is won)
 	public String checkWinningConditions(){
+		if(won == true){
+			//En person har fået en dårlig balance..
+			if(players.get(0).getBalance() == 0){
+				return players.get(1).getName()+" has won the game!";
+			}
+			else{
+				return players.get(0).getName()+" has won the game!";
+			}
+		}
+		//check om en person har vundet
 		if(players.get(0).getBalance() >= 3000 || players.get(1).getBalance() >= 3000){
 			if(players.get(0).getBalance() > players.get(1).getBalance()){
 				won = true;

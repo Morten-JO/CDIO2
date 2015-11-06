@@ -24,13 +24,6 @@ public class AccountTest {
 		acc.setBalance(0);
 		assertEquals(acc.getBalance(), 0);
 	}
-	
-	@Test
-	public void testNegative(){
-		Account acc = new Account(1000);
-		acc.adjustBalance(-20000);
-		assertEquals(acc.getBalance(), 0);
-	}
 
 	@Test
 	public void testAdjustBalance() {
@@ -43,6 +36,13 @@ public class AccountTest {
 	public void testGetBalance() {
 		Account acc = new Account(1000);
 		assertEquals(acc.getBalance(), 1000);
+	}
+	
+	@Test
+	public void testNegativeAdjustBalance(){
+		Account acc = new Account(1000);
+		boolean ret = acc.adjustBalance(-2000);
+		assertFalse(ret);
 	}
 
 }

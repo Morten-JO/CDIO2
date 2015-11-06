@@ -9,12 +9,12 @@ public class Player {
 		account = new Account(1000);
 	}
 	
-	public void adjustPoints(int dif){
-		account.adjustBalance(dif);
+	public boolean adjustPoints(int dif){
+		return account.adjustBalance(dif);
 	}
 	
-	public void setBalance(int balance){
-		account.setBalance(balance);
+	public boolean setBalance(int balance){
+		return account.setBalance(balance);
 	}
 	
 	public int getBalance(){

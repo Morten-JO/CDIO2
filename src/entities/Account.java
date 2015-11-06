@@ -8,20 +8,23 @@ public class Account {
 		setBalance(balance);
 	}
 	
-	public void setBalance(int balance){
+	public boolean setBalance(int balance){
 		if(balance < 0){
 			this.balance = 0;
+			return false;
 		}
 		else{
 			this.balance = balance;
+			return true;
 		}
 	}
 	
-	public void adjustBalance(int dif){
-		balance += dif;
-		if(balance < 0){
-			balance = 0;
+	public boolean adjustBalance(int dif){
+		if(balance + dif < 0){
+			return false;
 		}
+		balance += dif;
+		return true;
 	}
 	
 	public int getBalance(){
