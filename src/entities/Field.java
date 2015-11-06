@@ -1,7 +1,5 @@
 package entities;
 
-import logic.Game;
-
 public class Field {
 
 	private String name = "";
