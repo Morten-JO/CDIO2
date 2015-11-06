@@ -13,25 +13,35 @@ import entities.Cup;
  *
  * File: CupTest.java
  *
- * Created by: Morten Jørvad
+ * Created by: Morten Jï¿½rvad
  */
 
 public class CupTest {
 
 	@Test
-	public void testRollDices() {
-		Cup cup = new Cup(2, 6);
-		int now = cup.getDiceSum();
-		cup.rollDices();
-		//Dette kan gøres da den første sum er 0
-		assertTrue(cup.getDiceSum() != now);
-	}
-
-	@Test
+	// Tester summen af Ã¸jetal fÃ¸r kast
 	public void testGetDiceSum() {
 		Cup cup = new Cup(2, 6);
 		//Summen er 0 uden at der er blevet kastet
 		assertEquals(0, cup.getDiceSum());
+	}
+	
+	@Test
+	// Tester summen af Ã¸jetal efter kast
+	public void testGetSumOfDice() {
+		Cup cup = new Cup(2, 6);
+		cup.rollDices();
+		assertTrue(cup.getSumOfDice(0) != 0);
+	}
+	
+	@Test
+	//Sammenligner summen af Ã¸jetal efter 2 kast
+	public void testRollDices() {
+		Cup cup = new Cup(2, 6);
+		int now = cup.getDiceSum();
+		cup.rollDices();
+		//Dette kan gï¿½res da den fï¿½rste sum er 0
+		assertTrue(cup.getDiceSum() != now);
 	}
 
 	@Test
@@ -43,12 +53,6 @@ public class CupTest {
 		assertEquals(last, cup.getLastDiceSum());
 	}
 
-	@Test
-	public void testGetSumOfDice() {
-		Cup cup = new Cup(2, 6);
-		cup.rollDices();
-		assertTrue(cup.getSumOfDice(0) != 0);
-	}
 
 	@Test
 	public void testGetLastSumOfDice() {
