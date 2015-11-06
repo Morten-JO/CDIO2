@@ -41,8 +41,8 @@ public class AccountTest {
 	@Test
 	public void testNegativeAdjustBalance(){
 		Account acc = new Account(1000);
-		boolean ret = acc.adjustBalance(-2000);
-		assertFalse(ret);
+		assertFalse(acc.adjustBalance(-2000));
+		assertEquals(1000, acc.getBalance());
 	}
 
 }
